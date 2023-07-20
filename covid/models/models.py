@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class covid_19(models.Model):
     _name = 'covid.covid_19'
 
-    source = fields.Char(string ='Source', required = True)
+    source = fields.Char(string ='Source', required = True, help="Esto es una ayuda para el campo sourse")
     date = fields.Datetime(string = 'Date Time', required = True, default = fields.Datetime.now())
     country_id = fields.Many2one('res.country', required = True)
     infected = fields.Integer(string = 'Infected in Day', required = True, default = 0)
@@ -17,6 +17,7 @@ class covid_19(models.Model):
     total_deseaced_global = fields.Integer(string = 'Total Deseaced in the World', compute = 'set_total_deseaced_global')
     total_recovered_global = fields.Integer(string = 'Total Recovered in the World', compute = 'set_total_recovered_global')
     total_infected_global = fields.Integer(string = 'Total Infected in the World', compute = 'set_total_infected_global')
+
 
     # Contador Pais
     def set_total_infected(self):
