@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <record id="view_report_wizard" model="ir.ui.view">
+            <field name="name">Report in Date</field>
+            <field name="model">covid19.date.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Invoice Sales Order">
+                    <p class="or.grey">
+                        Generate PDF format report between a date range and by country.  If you don't select the country, report them all.
+                    </p>
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                    <separator string="COUNTRIES"/>
+                    <field name="country_ids"/>
+                    <footer>
+                        <button 
+                                name="print_report"
+                                string="Print Report"
+                                type="object" 
+                                class="btn-primary"/>
+                                
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_report_wizard" model="ir.actions.act_window">
+            <field name="name">Report In Date Range</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">covid19.date.report.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem
+        id="date_report_wizard_menu"
+        name="Report In Date Range"
+        action="action_view_report_wizard"
+        parent="covid_19_menu_root"
+        />
+
+    </data>
+</odoo>

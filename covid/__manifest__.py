@@ -29,7 +29,8 @@
         'views/templates.xml',
         'reports/daily_reports_external.xml',
         'reports/daily_reports_internal.xml',
-        'addons_odooV12/covid/wizard/date_report.xml',
+        'reports/date_report_external.xml',
+        'wizard/date_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
